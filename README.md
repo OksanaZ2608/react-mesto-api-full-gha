@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.89.66
+IP 51.250.89.66
 
-Frontend <https://domainoksana.nomoredomainsrocks.ru>
+Frontend <http://domainoksana.nomoredomainsrocks.ru>
 
-Backend <https://api.domainoksana.nomoredomainsrocks.ru>
+Backend <http://api.domainoksana.nomoredomainsrocks.ru>
