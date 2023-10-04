@@ -49,6 +49,5 @@ async function connect() {
 }
 app.use(errors());
 app.use(validationErrorServer);
-app.listen(PORT);
 
 connect();
