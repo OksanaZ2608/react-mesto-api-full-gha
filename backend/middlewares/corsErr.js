@@ -1,6 +1,5 @@
 const allowedCors = [
   'domainoksana.nomoredomainsrocks.ru',
-  'localhost:3000',
 ];
 module.exports = (req, res, next) => {
   const { method } = req;
