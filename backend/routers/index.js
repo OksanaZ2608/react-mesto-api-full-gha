@@ -9,6 +9,10 @@ const {
   validateUserLogin,
 } = require('../middlewares/celebrateErrors');
 
+const crashTest = require('./crashTest');
+
+router.use('/crash-test', crashTest);
+
 router.post('/signin', validateUserLogin, login);
 router.post('/signup', validateUserCreate, createUser);
 router.use(auth);

@@ -7,9 +7,8 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const routes = require('./routers/index');
 const { MONGO_URL } = require('./config');
+const corsErr = require('./middlewares/corsErr');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const { corsErr } = require('./middlewares/corsErr');
-
 const validationErrorServer = require('./middlewares/validationErrorServer');
 
 const { PORT = 3000 } = process.env;
@@ -32,8 +31,9 @@ const limiter = rateLimit({
 app.use(routes);
 app.use(helmet());
 app.use(limiter);
-app.use(errorLogger);
 app.use(corsErr);
+app.use(errorLogger);
+
 async function connect() {
   try {
     await mongoose.set('strictQuery', false);

@@ -1,5 +1,6 @@
 const allowedCors = [
-  'domainoksana.nomoredomainsrocks.ru',
+  'http://domainoksana.nomoredomainsrocks.ru',
+  'https://domainoksana.nomoredomainsrocks.ru',
 ];
 module.exports = (req, res, next) => {
   const { method } = req;
