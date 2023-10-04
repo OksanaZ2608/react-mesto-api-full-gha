@@ -87,11 +87,7 @@ class Api {
   }
 
 const api = new Api({
-    url: 'https://api.domainoksana.nomoredomainsrocks.ru',
-    headers: {
-        authorization: '67409028-f742-4343-b323-996ffba295cb',
-        'Content-Type': 'application/json'
-    }
+    url: 'https://api.domainoksana.nomoredomainsrocks.ru'
 });
 
 export default api;
