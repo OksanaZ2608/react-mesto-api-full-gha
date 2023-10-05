@@ -117,7 +117,7 @@ class Api {
 
 const api = new Api({
     url: 'https://api.domainoksana.nomoredomainsrocks.ru'
-    //url: 'http://localhost:3032'
+    // url: 'http://localhost:3000'
 });
 
 export default api;

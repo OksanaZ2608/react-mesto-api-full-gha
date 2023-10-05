@@ -19,11 +19,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(requestLogger);
-// app.use(cors({
-//  origin: 'https://domainoksana.nomoredomainsrocks.ru',
-//  credential: true,
-// }));
-app.use(cors());
+app.use(cors({
+  origin: 'https://domainoksana.nomoredomainsrocks.ru',
+  credential: true,
+}));
+// app.use(cors());
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
