@@ -11,6 +11,6 @@
 
 IP 51.250.89.66
 
-Frontend <http://domainoksana.nomoredomainsrocks.ru>
+Frontend <https://domainoksana.nomoredomainsrocks.ru>
 
-Backend <http://api.domainoksana.nomoredomainsrocks.ru>
+Backend <https://api.domainoksana.nomoredomainsrocks.ru>
