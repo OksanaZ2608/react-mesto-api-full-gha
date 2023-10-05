@@ -2,7 +2,7 @@ class Api {
     constructor(options) {
       this._url = options.url;
       this._headers = options.headers;
-      this._authorization = options.headers.authorization;
+     // this._authorization = options.headers.authorization;
     }
   
     _checkResponse(res) {
@@ -14,72 +14,101 @@ class Api {
     }
   
     getUserInfo() {
+      const token = localStorage.getItem("token");
       return fetch(`${this._url}/users/me`, {
-        headers: this._headers
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
       })
       .then(this._checkResponse)
     }
   
     getInitialCards() {
+      const token = localStorage.getItem("token");
       return fetch(`${this._url}/cards`, {
-        headers: this._headers
+        method: 'GET',
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
       })
       .then(this._checkResponse)
     }
   
     setUserInfo(name, about) {
+      const token = localStorage.getItem("token");
       return fetch(`${this._url}/users/me`, {
         method: 'PATCH',
-        headers: this._headers,
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
         body: JSON.stringify({ name, about })
       })
       .then(this._checkResponse)
     }
   
     addNewCard(name, link) {
+      const token = localStorage.getItem("token");
       return fetch(`${this._url}/cards`, {
         method: 'POST',
-        headers: this._headers,
+        headers: {
+          "content-type": "application/json",
+        authorization: `Bearer ${token}`,
+      },
         body: JSON.stringify({ name, link })
       })
       .then(this._checkResponse)
     }
   
     getLikes() {
+      const token = localStorage.getItem("token");
       return fetch(`${this._url}/cards`, {
-        headers: this._headers
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
       })
       .then(this._checkResponse)
     }
   
     deleteCard(cardId) {
+      const token = localStorage.getItem("token");
       return fetch(`${this._url}/cards/${cardId}`, {
         method: 'DELETE',
-        headers: this._headers
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
       })
       .then(this._checkResponse)
     }
   
     addLike(cardId) {
+      const token = localStorage.getItem("token");
       return fetch(`${this._url}/cards/${cardId}/likes`, {
         method: 'PUT',
-        headers: this._headers
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
       })
       .then(this._checkResponse)
     }
   
     deleteLike(cardId) {
+      const token = localStorage.getItem("token");
       return fetch(`${this._url}/cards/${cardId}/likes`, {
         method: 'DELETE',
-        headers: this._headers
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
       })
       .then(this._checkResponse)
     }
   
     changeAvatar(avatar) {
+      const token = localStorage.getItem("token");
       return fetch(`${this._url}/users/me/avatar`, {
         method: 'PATCH',
-        headers: this._headers,
+        headers: {
+          authorization: `Bearer ${token}`,
+        },   
         body: JSON.stringify({avatar})
       })
       .then(this._checkResponse)
@@ -87,7 +116,8 @@ class Api {
   }
 
 const api = new Api({
-    url: 'https://api.domainoksana.nomoredomainsrocks.ru'
+    //url: 'https://api.domainoksana.nomoredomainsrocks.ru'
+    url: 'http://localhost:3032'
 });
 
 export default api;
