@@ -11,7 +11,7 @@ const { MONGO_URL } = require('./config');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const validationErrorServer = require('./middlewares/validationErrorServer');
 
-const { PORT = 3032 } = process.env;
+const { PORT = 3000 } = process.env;
 
 const app = express();
 

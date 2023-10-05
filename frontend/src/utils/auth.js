@@ -45,8 +45,8 @@ class Auth {
 }
 
 const auth = new Auth({
-  //url: 'https://api.domainoksana.nomoredomainsrocks.ru'
-  url: 'http://localhost:3032'
+  url: 'https://api.domainoksana.nomoredomainsrocks.ru'
+  //url: 'http://localhost:3032'
 })
 
 export default auth;
